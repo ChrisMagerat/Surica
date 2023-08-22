@@ -14,7 +14,7 @@ public class BooksController : ControllerBase
     }
 
     [HttpGet("AuthorId")]
-    public IEnumerable<Books> Get()
+    public IEnumerable<Books> Post()
     {
         return Enumerable.Range(1, 5).Select(index => new Books
         {
