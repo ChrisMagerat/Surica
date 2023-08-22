@@ -13,7 +13,9 @@ public class AccountsController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("GetUserData")]
+    [HttpGet("register")]
+    [HttpGet("login")]
+
     public IEnumerable<Accounts> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new Accounts
@@ -23,4 +25,7 @@ public class AccountsController : ControllerBase
         })
         .ToArray();
     }
+
+
+    
 }
