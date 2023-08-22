@@ -18,7 +18,10 @@ public class BooksController : ControllerBase
     {
         return Enumerable.Range(1, 5).Select(index => new Books
         {
-            
+            BookName= "Lord of the Rings",
+            DatePublished =new DateTime( 1970,01,01),
+            Publisher= "Harpercollins",
+            CopiesSold= 10000
         })
         .ToArray();
     }
