@@ -6,7 +6,21 @@ namespace Surica.Controllers;
 [Route("[controller]")]
 public class AccountsController : ControllerBase
 {
-    public Guid UserID { get; set; }
-    public string UserName { get; set; }
-    public string Password { get; set; }
+     private readonly ILogger<AccountsController> _logger;
+
+    public AccountsController(ILogger<AccountsController> logger)
+    {
+        _logger = logger;
+    }
+
+    [HttpGet(Name = "GetUserData")]
+    public IEnumerable<Accounts> Get()
+    {
+        return Enumerable.Range(1, 5).Select(index => new Accounts
+        {
+            UserName = "Admin", 
+            Password = "1q2w#E"
+        })
+        .ToArray();
+    }
 }
