@@ -13,7 +13,7 @@ public class AccountsController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetUserData")]
+    [HttpGet("GetUserData")]
     public IEnumerable<Accounts> Get()
     {
         return Enumerable.Range(1, 5).Select(index => new Accounts
